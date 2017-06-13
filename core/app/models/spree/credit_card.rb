@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: spree_credit_cards
+#
+#  id                          :integer          not null, primary key
+#  month                       :string
+#  year                        :string
+#  cc_type                     :string
+#  last_digits                 :string
+#  gateway_customer_profile_id :string
+#  gateway_payment_profile_id  :string
+#  created_at                  :datetime
+#  updated_at                  :datetime
+#  name                        :string
+#  user_id                     :integer
+#  payment_method_id           :integer
+#  default                     :boolean          default(FALSE), not null
+#  address_id                  :integer
+#
+
 module Spree
   # The default `source` of a `Spree::Payment`.
   #

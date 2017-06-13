@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: spree_products_taxons
+#
+#  product_id :integer
+#  taxon_id   :integer
+#  id         :integer          not null, primary key
+#  position   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 module Spree
   class Classification < Spree::Base
     self.table_name = 'spree_products_taxons'

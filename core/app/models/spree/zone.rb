@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_zones
+#
+#  id                 :integer          not null, primary key
+#  name               :string
+#  description        :string
+#  default_tax        :boolean          default(FALSE)
+#  zone_members_count :integer          default(0)
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
 module Spree
   class Zone < Spree::Base
     has_many :zone_members, dependent: :destroy, class_name: "Spree::ZoneMember", inverse_of: :zone

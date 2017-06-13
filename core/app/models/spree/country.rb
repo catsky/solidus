@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: spree_countries
+#
+#  id              :integer          not null, primary key
+#  iso_name        :string
+#  iso             :string
+#  iso3            :string
+#  name            :string
+#  numcode         :integer
+#  states_required :boolean          default(FALSE)
+#  updated_at      :datetime
+#  created_at      :datetime
+#
+
 module Spree
   class Country < Spree::Base
     has_many :states, -> { order(:name) }, dependent: :destroy

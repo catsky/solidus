@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: spree_properties
+#
+#  id           :integer          not null, primary key
+#  name         :string
+#  presentation :string           not null
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 module Spree
   class Property < Spree::Base
     has_many :product_properties, dependent: :delete_all, inverse_of: :property

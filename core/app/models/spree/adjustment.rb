@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: spree_adjustments
+#
+#  id                   :integer          not null, primary key
+#  source_type          :string
+#  source_id            :integer
+#  adjustable_type      :string
+#  adjustable_id        :integer          not null
+#  amount               :decimal(10, 2)
+#  label                :string
+#  eligible             :boolean          default(TRUE)
+#  created_at           :datetime
+#  updated_at           :datetime
+#  order_id             :integer          not null
+#  included             :boolean          default(FALSE)
+#  promotion_code_id    :integer
+#  adjustment_reason_id :integer
+#  finalized            :boolean          default(FALSE), not null
+#
+
 module Spree
   # Adjustments represent a change to the +item_total+ of an Order. Each
   # adjustment has an +amount+ that can be either positive or negative.

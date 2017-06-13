@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_prices
+#
+#  id          :integer          not null, primary key
+#  variant_id  :integer          not null
+#  amount      :decimal(10, 2)
+#  currency    :string
+#  deleted_at  :datetime
+#  created_at  :datetime
+#  updated_at  :datetime
+#  country_iso :string(2)
+#
+
 module Spree
   class Price < Spree::Base
     acts_as_paranoid

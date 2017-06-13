@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_shipping_rates
+#
+#  id                 :integer          not null, primary key
+#  shipment_id        :integer
+#  shipping_method_id :integer
+#  selected           :boolean          default(FALSE)
+#  cost               :decimal(8, 2)    default(0.0)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  tax_rate_id        :integer
+#
+
 module Spree
   # Records the costs of different shipping methods for a shipment and which
   # method has been selected to deliver the shipment.

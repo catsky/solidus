@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_stock_movements
+#
+#  id              :integer          not null, primary key
+#  stock_item_id   :integer
+#  quantity        :integer          default(0)
+#  action          :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  originator_type :string
+#  originator_id   :integer
+#
+
 module Spree
   class StockMovement < Spree::Base
     belongs_to :stock_item, class_name: 'Spree::StockItem', inverse_of: :stock_movements

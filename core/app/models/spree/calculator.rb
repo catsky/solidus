@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_calculators
+#
+#  id              :integer          not null, primary key
+#  type            :string
+#  calculable_type :string
+#  calculable_id   :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  preferences     :text
+#
+
 module Spree
   class Calculator < Spree::Base
     belongs_to :calculable, polymorphic: true

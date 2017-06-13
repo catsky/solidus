@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: spree_shipping_rate_taxes
+#
+#  id               :integer          not null, primary key
+#  amount           :decimal(8, 2)    default(0.0), not null
+#  tax_rate_id      :integer
+#  shipping_rate_id :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
 module Spree
   # Used to persist shipping rate tax estimations.
   # @attr [Spree::ShippingRate] shipping_rate The shipping rate to be taxed

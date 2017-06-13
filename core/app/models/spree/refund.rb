@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_refunds
+#
+#  id               :integer          not null, primary key
+#  payment_id       :integer
+#  amount           :decimal(10, 2)   default(0.0), not null
+#  transaction_id   :string
+#  created_at       :datetime
+#  updated_at       :datetime
+#  refund_reason_id :integer
+#  reimbursement_id :integer
+#
+
 module Spree
   class Refund < Spree::Base
     belongs_to :payment, inverse_of: :refunds

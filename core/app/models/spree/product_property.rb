@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_product_properties
+#
+#  id          :integer          not null, primary key
+#  value       :string
+#  product_id  :integer
+#  property_id :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  position    :integer          default(0)
+#
+
 module Spree
   class ProductProperty < Spree::Base
     include Spree::OrderedPropertyValueList

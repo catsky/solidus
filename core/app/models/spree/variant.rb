@@ -1,3 +1,25 @@
+# == Schema Information
+#
+# Table name: spree_variants
+#
+#  id              :integer          not null, primary key
+#  sku             :string           default(""), not null
+#  weight          :decimal(8, 2)    default(0.0)
+#  height          :decimal(8, 2)
+#  width           :decimal(8, 2)
+#  depth           :decimal(8, 2)
+#  deleted_at      :datetime
+#  is_master       :boolean          default(FALSE)
+#  product_id      :integer
+#  cost_price      :decimal(10, 2)
+#  position        :integer
+#  cost_currency   :string
+#  track_inventory :boolean          default(TRUE)
+#  tax_category_id :integer
+#  updated_at      :datetime
+#  created_at      :datetime
+#
+
 module Spree
   # == Master Variant
   #

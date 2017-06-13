@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: spree_stores
+#
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  url                  :string
+#  meta_description     :text
+#  meta_keywords        :text
+#  seo_title            :string
+#  mail_from_address    :string
+#  default_currency     :string
+#  code                 :string
+#  default              :boolean          default(FALSE), not null
+#  created_at           :datetime
+#  updated_at           :datetime
+#  cart_tax_country_iso :string
+#
+
 module Spree
   # Records store specific configuration such as store name and URL.
   #

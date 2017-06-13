@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_order_stock_locations
+#
+#  id                 :integer          not null, primary key
+#  order_id           :integer
+#  variant_id         :integer
+#  quantity           :integer
+#  stock_location_id  :integer
+#  shipment_fulfilled :boolean          default(FALSE), not null
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
 module Spree
   class OrderStockLocation < Spree::Base
     belongs_to :variant, class_name: "Spree::Variant"

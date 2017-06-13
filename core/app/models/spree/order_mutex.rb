@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: spree_order_mutexes
+#
+#  id         :integer          not null, primary key
+#  order_id   :integer          not null
+#  created_at :datetime
+#
+
 module Spree
   class OrderMutex < Spree::Base
     class LockFailed < StandardError; end

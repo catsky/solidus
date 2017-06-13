@@ -1,3 +1,28 @@
+# == Schema Information
+#
+# Table name: spree_return_items
+#
+#  id                              :integer          not null, primary key
+#  return_authorization_id         :integer
+#  inventory_unit_id               :integer
+#  exchange_variant_id             :integer
+#  created_at                      :datetime
+#  updated_at                      :datetime
+#  amount                          :decimal(12, 4)   default(0.0), not null
+#  included_tax_total              :decimal(12, 4)   default(0.0), not null
+#  additional_tax_total            :decimal(12, 4)   default(0.0), not null
+#  reception_status                :string
+#  acceptance_status               :string
+#  customer_return_id              :integer
+#  reimbursement_id                :integer
+#  exchange_inventory_unit_id      :integer
+#  acceptance_status_errors        :text
+#  preferred_reimbursement_type_id :integer
+#  override_reimbursement_type_id  :integer
+#  resellable                      :boolean          default(TRUE), not null
+#  return_reason_id                :integer
+#
+
 module Spree
   class ReturnItem < Spree::Base
     INTERMEDIATE_RECEPTION_STATUSES = %i(given_to_customer lost_in_transit shipped_wrong_item short_shipped in_transit)

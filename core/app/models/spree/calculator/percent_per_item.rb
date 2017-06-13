@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_calculators
+#
+#  id              :integer          not null, primary key
+#  type            :string
+#  calculable_type :string
+#  calculable_id   :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  preferences     :text
+#
+
 module Spree
   # A calculator for promotions that calculates a percent-off discount
   # for all matching products in an order. This should not be used as a

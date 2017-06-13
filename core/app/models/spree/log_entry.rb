@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: spree_log_entries
+#
+#  id          :integer          not null, primary key
+#  source_type :string
+#  source_id   :integer
+#  details     :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 module Spree
   class LogEntry < Spree::Base
     belongs_to :source, polymorphic: true

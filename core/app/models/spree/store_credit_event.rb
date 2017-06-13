@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: spree_store_credit_events
+#
+#  id                 :integer          not null, primary key
+#  store_credit_id    :integer          not null
+#  action             :string           not null
+#  amount             :decimal(8, 2)
+#  user_total_amount  :decimal(8, 2)    default(0.0), not null
+#  authorization_code :string           not null
+#  deleted_at         :datetime
+#  originator_type    :string
+#  originator_id      :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#  update_reason_id   :integer
+#
+
 module Spree
   class StoreCreditEvent < Spree::Base
     acts_as_paranoid

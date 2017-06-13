@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_stock_items
+#
+#  id                :integer          not null, primary key
+#  stock_location_id :integer
+#  variant_id        :integer
+#  count_on_hand     :integer          default(0), not null
+#  created_at        :datetime
+#  updated_at        :datetime
+#  backorderable     :boolean          default(FALSE)
+#  deleted_at        :datetime
+#
+
 module Spree
   class StockItem < Spree::Base
     acts_as_paranoid

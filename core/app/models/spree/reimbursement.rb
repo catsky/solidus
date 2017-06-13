@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_reimbursements
+#
+#  id                   :integer          not null, primary key
+#  number               :string
+#  reimbursement_status :string
+#  customer_return_id   :integer
+#  order_id             :integer
+#  total                :decimal(10, 2)
+#  created_at           :datetime
+#  updated_at           :datetime
+#
+
 module Spree
   class Reimbursement < Spree::Base
     class IncompleteReimbursementError < StandardError; end

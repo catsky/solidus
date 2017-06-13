@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: spree_taxonomies
+#
+#  id         :integer          not null, primary key
+#  name       :string           not null
+#  created_at :datetime
+#  updated_at :datetime
+#  position   :integer          default(0)
+#
+
 module Spree
   class Taxonomy < Spree::Base
     acts_as_list

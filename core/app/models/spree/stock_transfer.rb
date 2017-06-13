@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: spree_stock_transfers
+#
+#  id                      :integer          not null, primary key
+#  description             :string
+#  source_location_id      :integer
+#  destination_location_id :integer
+#  created_at              :datetime
+#  updated_at              :datetime
+#  number                  :string
+#  shipped_at              :datetime
+#  closed_at               :datetime
+#  tracking_number         :string
+#  created_by_id           :integer
+#  closed_by_id            :integer
+#  finalized_at            :datetime
+#  finalized_by_id         :integer
+#  deleted_at              :datetime
+#
+
 module Spree
   class StockTransfer < Spree::Base
     class InvalidTransferMovement < StandardError; end

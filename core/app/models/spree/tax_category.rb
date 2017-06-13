@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_tax_categories
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  description :string
+#  is_default  :boolean          default(FALSE)
+#  deleted_at  :datetime
+#  created_at  :datetime
+#  updated_at  :datetime
+#  tax_code    :string
+#
+
 module Spree
   class TaxCategory < Spree::Base
     acts_as_paranoid

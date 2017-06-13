@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_refund_reasons
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  active     :boolean          default(TRUE)
+#  mutable    :boolean          default(TRUE)
+#  created_at :datetime
+#  updated_at :datetime
+#  code       :string
+#
+
 module Spree
   class RefundReason < Spree::Base
     include Spree::NamedType

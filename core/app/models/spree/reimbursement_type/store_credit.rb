@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_reimbursement_types
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  active     :boolean          default(TRUE)
+#  mutable    :boolean          default(TRUE)
+#  created_at :datetime
+#  updated_at :datetime
+#  type       :string
+#
+
 class Spree::ReimbursementType::StoreCredit < Spree::ReimbursementType
   extend Spree::ReimbursementType::ReimbursementHelpers
 

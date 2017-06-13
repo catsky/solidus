@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: spree_unit_cancels
+#
+#  id                :integer          not null, primary key
+#  inventory_unit_id :integer          not null
+#  reason            :string
+#  created_by        :string
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
 # This represents an inventory unit that has been canceled from an order after it has already been completed
 # The reason specifies why it was canceled.
 # This class should encapsulate logic related to canceling inventory after order complete

@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: spree_roles_users
+#
+#  role_id    :integer
+#  user_id    :integer
+#  id         :integer          not null, primary key
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 module Spree
   class RoleUser < Spree::Base
     self.table_name = "spree_roles_users"

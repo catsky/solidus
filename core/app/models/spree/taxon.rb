@@ -1,3 +1,28 @@
+# == Schema Information
+#
+# Table name: spree_taxons
+#
+#  id                :integer          not null, primary key
+#  parent_id         :integer
+#  position          :integer          default(0)
+#  name              :string           not null
+#  permalink         :string
+#  taxonomy_id       :integer
+#  lft               :integer
+#  rgt               :integer
+#  icon_file_name    :string
+#  icon_content_type :string
+#  icon_file_size    :integer
+#  icon_updated_at   :datetime
+#  description       :text
+#  created_at        :datetime
+#  updated_at        :datetime
+#  meta_title        :string
+#  meta_description  :string
+#  meta_keywords     :string
+#  depth             :integer
+#
+
 module Spree
   class Taxon < Spree::Base
     acts_as_nested_set dependent: :destroy

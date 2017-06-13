@@ -1,3 +1,25 @@
+# == Schema Information
+#
+# Table name: spree_promotions
+#
+#  id                    :integer          not null, primary key
+#  description           :string
+#  expires_at            :datetime
+#  starts_at             :datetime
+#  name                  :string
+#  type                  :string
+#  usage_limit           :integer
+#  match_policy          :string           default("all")
+#  code                  :string
+#  advertise             :boolean          default(FALSE)
+#  path                  :string
+#  created_at            :datetime
+#  updated_at            :datetime
+#  promotion_category_id :integer
+#  per_code_usage_limit  :integer
+#  apply_automatically   :boolean          default(FALSE)
+#
+
 module Spree
   class Promotion < Spree::Base
     MATCH_POLICIES = %w(all any)

@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: spree_return_authorizations
+#
+#  id                :integer          not null, primary key
+#  number            :string
+#  state             :string
+#  order_id          :integer
+#  memo              :text
+#  created_at        :datetime
+#  updated_at        :datetime
+#  stock_location_id :integer
+#  return_reason_id  :integer
+#
+
 module Spree
   # Models the return of Inventory Units to a Stock Location for an Order.
   #

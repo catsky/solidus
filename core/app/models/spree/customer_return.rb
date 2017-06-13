@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: spree_customer_returns
+#
+#  id                :integer          not null, primary key
+#  number            :string
+#  stock_location_id :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
 module Spree
   class CustomerReturn < Spree::Base
     belongs_to :stock_location

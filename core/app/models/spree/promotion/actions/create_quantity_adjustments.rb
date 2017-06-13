@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_promotion_actions
+#
+#  id           :integer          not null, primary key
+#  promotion_id :integer
+#  position     :integer
+#  type         :string
+#  deleted_at   :datetime
+#  preferences  :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 module Spree::Promotion::Actions
   class CreateQuantityAdjustments < CreateItemAdjustments
     preference :group_size, :integer, default: 1

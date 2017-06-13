@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_transfer_items
+#
+#  id                :integer          not null, primary key
+#  variant_id        :integer          not null
+#  stock_transfer_id :integer          not null
+#  expected_quantity :integer          default(0), not null
+#  received_quantity :integer          default(0), not null
+#  created_at        :datetime
+#  updated_at        :datetime
+#  deleted_at        :datetime
+#
+
 module Spree
   class TransferItem < Spree::Base
     acts_as_paranoid

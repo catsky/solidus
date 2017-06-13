@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: spree_tax_rates
+#
+#  id                 :integer          not null, primary key
+#  amount             :decimal(8, 5)
+#  zone_id            :integer
+#  included_in_price  :boolean          default(FALSE)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  name               :string
+#  show_rate_in_label :boolean          default(TRUE)
+#  deleted_at         :datetime
+#  starts_at          :datetime
+#  expires_at         :datetime
+#
+
 module Spree
   class TaxRate < Spree::Base
     acts_as_paranoid

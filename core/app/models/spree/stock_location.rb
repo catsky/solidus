@@ -1,3 +1,31 @@
+# == Schema Information
+#
+# Table name: spree_stock_locations
+#
+#  id                      :integer          not null, primary key
+#  name                    :string
+#  created_at              :datetime
+#  updated_at              :datetime
+#  default                 :boolean          default(FALSE), not null
+#  address1                :string
+#  address2                :string
+#  city                    :string
+#  state_id                :integer
+#  state_name              :string
+#  country_id              :integer
+#  zipcode                 :string
+#  phone                   :string
+#  active                  :boolean          default(TRUE)
+#  backorderable_default   :boolean          default(FALSE)
+#  propagate_all_variants  :boolean          default(TRUE)
+#  admin_name              :string
+#  position                :integer          default(0)
+#  restock_inventory       :boolean          default(TRUE), not null
+#  fulfillable             :boolean          default(TRUE), not null
+#  code                    :string
+#  check_stock_on_transfer :boolean          default(TRUE)
+#
+
 module Spree
   # Records the name and addresses from which stock items are fulfilled in
   # cartons.

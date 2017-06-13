@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: spree_option_types
+#
+#  id           :integer          not null, primary key
+#  name         :string(100)
+#  presentation :string(100)
+#  position     :integer          default(0), not null
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 module Spree
   # Option types denote the different options for a variant. A typical option
   # type would be a size, with that option type’s values being something such

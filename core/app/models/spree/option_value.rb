@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_option_values
+#
+#  id             :integer          not null, primary key
+#  position       :integer
+#  name           :string
+#  presentation   :string
+#  option_type_id :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
 module Spree
   class OptionValue < Spree::Base
     belongs_to :option_type, class_name: 'Spree::OptionType', inverse_of: :option_values

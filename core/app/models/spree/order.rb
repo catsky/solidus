@@ -1,3 +1,44 @@
+# == Schema Information
+#
+# Table name: spree_orders
+#
+#  id                     :integer          not null, primary key
+#  number                 :string(32)
+#  item_total             :decimal(10, 2)   default(0.0), not null
+#  total                  :decimal(10, 2)   default(0.0), not null
+#  state                  :string
+#  adjustment_total       :decimal(10, 2)   default(0.0), not null
+#  user_id                :integer
+#  completed_at           :datetime
+#  bill_address_id        :integer
+#  ship_address_id        :integer
+#  payment_total          :decimal(10, 2)   default(0.0)
+#  shipment_state         :string
+#  payment_state          :string
+#  email                  :string
+#  special_instructions   :text
+#  created_at             :datetime
+#  updated_at             :datetime
+#  currency               :string
+#  last_ip_address        :string
+#  created_by_id          :integer
+#  shipment_total         :decimal(10, 2)   default(0.0), not null
+#  additional_tax_total   :decimal(10, 2)   default(0.0)
+#  promo_total            :decimal(10, 2)   default(0.0)
+#  channel                :string           default("spree")
+#  included_tax_total     :decimal(10, 2)   default(0.0), not null
+#  item_count             :integer          default(0)
+#  approver_id            :integer
+#  approved_at            :datetime
+#  confirmation_delivered :boolean          default(FALSE)
+#  guest_token            :string
+#  canceled_at            :datetime
+#  canceler_id            :integer
+#  store_id               :integer
+#  approver_name          :string
+#  frontend_viewable      :boolean          default(TRUE), not null
+#
+
 require 'spree/core/validators/email'
 require 'spree/order/checkout'
 

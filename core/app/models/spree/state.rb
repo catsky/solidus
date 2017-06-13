@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: spree_states
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  abbr       :string
+#  country_id :integer
+#  updated_at :datetime
+#  created_at :datetime
+#
+
 module Spree
   class State < Spree::Base
     belongs_to :country, class_name: 'Spree::Country'

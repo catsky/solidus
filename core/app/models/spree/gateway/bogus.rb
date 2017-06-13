@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: spree_payment_methods
+#
+#  id                 :integer          not null, primary key
+#  type               :string
+#  name               :string
+#  description        :text
+#  active             :boolean          default(TRUE)
+#  deleted_at         :datetime
+#  created_at         :datetime
+#  updated_at         :datetime
+#  auto_capture       :boolean
+#  preferences        :text
+#  preference_source  :string
+#  position           :integer          default(0)
+#  available_to_users :boolean          default(TRUE)
+#  available_to_admin :boolean          default(TRUE)
+#
+
 module Spree
   class Gateway::Bogus < Gateway
     TEST_VISA = ['4111111111111111', '4012888888881881', '4222222222222']

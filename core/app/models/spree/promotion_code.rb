@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: spree_promotion_codes
+#
+#  id                      :integer          not null, primary key
+#  promotion_id            :integer          not null
+#  value                   :string           not null
+#  created_at              :datetime
+#  updated_at              :datetime
+#  promotion_code_batch_id :integer
+#
+
 class Spree::PromotionCode < Spree::Base
   belongs_to :promotion, inverse_of: :codes
   belongs_to :promotion_code_batch, class_name: "Spree::PromotionCodeBatch"

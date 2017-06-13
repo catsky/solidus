@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: spree_products
+#
+#  id                   :integer          not null, primary key
+#  name                 :string           default(""), not null
+#  description          :text
+#  available_on         :datetime
+#  deleted_at           :datetime
+#  slug                 :string
+#  meta_description     :text
+#  meta_keywords        :string
+#  tax_category_id      :integer
+#  shipping_category_id :integer
+#  created_at           :datetime
+#  updated_at           :datetime
+#  promotionable        :boolean          default(TRUE)
+#  meta_title           :string
+#
+
 module Spree
   # Products represent an entity for sale in a store. Products can have
   # variations, called variants. Product properties include description,

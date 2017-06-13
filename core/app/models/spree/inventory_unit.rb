@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: spree_inventory_units
+#
+#  id           :integer          not null, primary key
+#  state        :string
+#  variant_id   :integer
+#  order_id     :integer
+#  shipment_id  :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  pending      :boolean          default(TRUE)
+#  line_item_id :integer
+#  carton_id    :integer
+#
+
 module Spree
   # Tracks the state of line items' fulfillment.
   #

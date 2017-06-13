@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_calculators
+#
+#  id              :integer          not null, primary key
+#  type            :string
+#  calculable_type :string
+#  calculable_id   :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  preferences     :text
+#
+
 require_dependency 'spree/calculator'
 
 # This is a calculator for line item adjustment actions. It accepts a line item

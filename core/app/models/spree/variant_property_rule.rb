@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: spree_variant_property_rules
+#
+#  id         :integer          not null, primary key
+#  product_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # The reason for variant properties not being associated with variants
 # (either directly or through an association table) is performance.
 #

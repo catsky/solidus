@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_reimbursement_types
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  active     :boolean          default(TRUE)
+#  mutable    :boolean          default(TRUE)
+#  created_at :datetime
+#  updated_at :datetime
+#  type       :string
+#
+
 module Spree
   class ReimbursementType < Spree::Base
     include Spree::NamedType

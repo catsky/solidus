@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: spree_payments
+#
+#  id                   :integer          not null, primary key
+#  amount               :decimal(10, 2)   default(0.0), not null
+#  order_id             :integer
+#  source_type          :string
+#  source_id            :integer
+#  payment_method_id    :integer
+#  state                :string
+#  response_code        :string
+#  avs_response         :string
+#  created_at           :datetime
+#  updated_at           :datetime
+#  number               :string
+#  cvv_response_code    :string
+#  cvv_response_message :string
+#
+
 module Spree
   # Manage and process a payment for an order, from a specific
   # source (e.g. `Spree::CreditCard`) using a specific payment method (e.g

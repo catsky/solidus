@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_user_addresses
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer          not null
+#  address_id :integer          not null
+#  default    :boolean          default(FALSE)
+#  archived   :boolean          default(FALSE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 module Spree
   class UserAddress < Spree::Base
     belongs_to :user, class_name: UserClassHandle.new, foreign_key: "user_id"

@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: spree_shipping_categories
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 module Spree
   class ShippingCategory < Spree::Base
     validates :name, presence: true

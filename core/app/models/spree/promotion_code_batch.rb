@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: spree_promotion_code_batches
+#
+#  id              :integer          not null, primary key
+#  promotion_id    :integer          not null
+#  base_code       :string           not null
+#  number_of_codes :integer          not null
+#  email           :string
+#  error           :string
+#  state           :string           default("pending")
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 module Spree
   class PromotionCodeBatch < ActiveRecord::Base
     class CantProcessStartedBatch < StandardError

@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: spree_calculators
+#
+#  id              :integer          not null, primary key
+#  type            :string
+#  calculable_type :string
+#  calculable_id   :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  preferences     :text
+#
+
 module Spree
   # @deprecated This calculator will be removed in future versions of Spree.
   #   The only case where it was used was for Free Shipping Promotions.  There is

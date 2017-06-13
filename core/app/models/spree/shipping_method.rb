@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: spree_shipping_methods
+#
+#  id                 :integer          not null, primary key
+#  name               :string
+#  deleted_at         :datetime
+#  created_at         :datetime
+#  updated_at         :datetime
+#  tracking_url       :string
+#  admin_name         :string
+#  tax_category_id    :integer
+#  code               :string
+#  available_to_all   :boolean          default(TRUE)
+#  carrier            :string
+#  service_level      :string
+#  available_to_users :boolean          default(TRUE)
+#
+
 module Spree
   # Represents a means of having a shipment delivered, such as FedEx or UPS.
   #

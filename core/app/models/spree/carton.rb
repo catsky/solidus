@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: spree_cartons
+#
+#  id                        :integer          not null, primary key
+#  number                    :string
+#  external_number           :string
+#  stock_location_id         :integer
+#  address_id                :integer
+#  shipping_method_id        :integer
+#  tracking                  :string
+#  shipped_at                :datetime
+#  created_at                :datetime
+#  updated_at                :datetime
+#  imported_from_shipment_id :integer
+#
+
 class Spree::Carton < Spree::Base
   belongs_to :address, class_name: 'Spree::Address'
   belongs_to :stock_location, class_name: 'Spree::StockLocation', inverse_of: :cartons

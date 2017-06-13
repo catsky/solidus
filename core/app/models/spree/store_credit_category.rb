@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: spree_store_credit_categories
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Spree::StoreCreditCategory < Spree::Base
   class_attribute :non_expiring_credit_types
   self.non_expiring_credit_types = [Spree.t("store_credit.non_expiring")]

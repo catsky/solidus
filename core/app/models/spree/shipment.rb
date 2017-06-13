@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: spree_shipments
+#
+#  id                    :integer          not null, primary key
+#  tracking              :string
+#  number                :string
+#  cost                  :decimal(10, 2)   default(0.0)
+#  shipped_at            :datetime
+#  order_id              :integer
+#  deprecated_address_id :integer
+#  state                 :string
+#  created_at            :datetime
+#  updated_at            :datetime
+#  stock_location_id     :integer
+#  adjustment_total      :decimal(10, 2)   default(0.0)
+#  additional_tax_total  :decimal(10, 2)   default(0.0)
+#  promo_total           :decimal(10, 2)   default(0.0)
+#  included_tax_total    :decimal(10, 2)   default(0.0), not null
+#
+
 module Spree
   # An order's planned shipments including tracking and cost.
   #

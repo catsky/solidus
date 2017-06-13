@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_promotion_rules
+#
+#  id               :integer          not null, primary key
+#  promotion_id     :integer
+#  product_group_id :integer
+#  type             :string
+#  created_at       :datetime
+#  updated_at       :datetime
+#  code             :string
+#  preferences      :text
+#
+
 module Spree
   # Base class for all promotion rules
   class PromotionRule < Spree::Base

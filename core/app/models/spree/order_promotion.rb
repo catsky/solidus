@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: spree_orders_promotions
+#
+#  order_id          :integer
+#  promotion_id      :integer
+#  promotion_code_id :integer
+#  id                :integer          not null, primary key
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
 module Spree
   # Spree::OrderPromotion represents the relationship between:
   #

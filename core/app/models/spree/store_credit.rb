@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: spree_store_credits
+#
+#  id                :integer          not null, primary key
+#  user_id           :integer
+#  category_id       :integer
+#  created_by_id     :integer
+#  amount            :decimal(8, 2)    default(0.0), not null
+#  amount_used       :decimal(8, 2)    default(0.0), not null
+#  amount_authorized :decimal(8, 2)    default(0.0), not null
+#  currency          :string
+#  memo              :text
+#  deleted_at        :datetime
+#  created_at        :datetime
+#  updated_at        :datetime
+#  type_id           :integer
+#  invalidated_at    :datetime
+#
+
 class Spree::StoreCredit < Spree::PaymentSource
   acts_as_paranoid
 
