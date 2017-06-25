@@ -405,15 +405,18 @@ module Spree
     end
     deprecate create_tax_charge!: :update!, deprecator: Spree::Deprecation
 
+    def reimbursement_total
+      reimbursements.sum(:total)
+    end
+
     def outstanding_balance
       # If reimbursement has happened add it back to total to prevent balance_due payment state
       # See: https://github.com/spree/spree/issues/6229
-      adjusted_payment_total = payment_total + refund_total
 
       if state == 'canceled'
-        -1 * adjusted_payment_total
+        -1 * payment_total
       else
-        total - adjusted_payment_total
+        total - reimbursement_total - payment_total
       end
     end
 
@@ -739,7 +742,10 @@ module Spree
       self.ship_address = Spree::Address.immutable_merge(ship_address, attributes)
     end
 
-    def assign_default_user_addresses!
+    # Assigns a default bill_address and ship_address to the order based on the
+    # associated user's bill_address and ship_address.
+    # @note This doesn't persist the change bill_address or ship_address
+    def assign_default_user_addresses
       if user
         # this is one of 2 places still using User#bill_address
         self.bill_address ||= user.bill_address if user.bill_address.try!(:valid?)
@@ -748,8 +754,11 @@ module Spree
         self.ship_address ||= user.ship_address if user.ship_address.try!(:valid?) && checkout_steps.include?("delivery")
       end
     end
-    alias_method :assign_default_addresses!, :assign_default_user_addresses!
-    deprecate assign_default_addresses!: :assign_default_user_addresses!, deprecator: Spree::Deprecation
+
+    alias_method :assign_default_user_addresses!, :assign_default_user_addresses
+    deprecate assign_default_user_addresses!: :assign_default_user_addresses, deprecator: Spree::Deprecation
+    alias_method :assign_default_addresses!, :assign_default_user_addresses
+    deprecate assign_default_addresses!: :assign_default_user_addresses, deprecator: Spree::Deprecation
 
     def persist_user_address!
       if !temporary_address && user && user.respond_to?(:persist_order_address) && bill_address_id

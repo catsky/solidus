@@ -206,6 +206,21 @@ describe Spree::Order, type: :model do
     end
   end
 
+  context '#outstanding_balance' do
+    let(:order) { create(:order_ready_to_ship, line_items_count: 3) }
+    let(:payment) { order.payments.first }
+
+    it "should handle refunds properly" do
+      order.cancellations.short_ship([order.inventory_units.first])
+      expect(order.outstanding_balance).to be_negative
+      expect(order.payment_state).to eq('credit_owed')
+      create(:refund, amount: order.outstanding_balance.abs, payment: payment, transaction_id: nil)
+      order.reload
+      expect(order.outstanding_balance).to eq(0)
+      expect(order.payment_state).to eq('paid')
+    end
+  end
+
   context "#display_outstanding_balance" do
     it "returns the value as a spree money" do
       allow(order).to receive(:outstanding_balance) { 10.55 }
@@ -523,7 +538,7 @@ describe Spree::Order, type: :model do
   # Regression test for https://github.com/spree/spree/issues/4199
   context "#available_payment_methods" do
     it "includes frontend payment methods" do
-      payment_method = Spree::PaymentMethod.create!({
+      payment_method = Spree::PaymentMethod::Check.create!({
         name: "Fake",
         active: true,
         available_to_users: true,
@@ -533,7 +548,7 @@ describe Spree::Order, type: :model do
     end
 
     it "includes 'both' payment methods" do
-      payment_method = Spree::PaymentMethod.create!({
+      payment_method = Spree::PaymentMethod::Check.create!({
         name: "Fake",
         active: true,
         available_to_users: true,
@@ -543,7 +558,7 @@ describe Spree::Order, type: :model do
     end
 
     it "does not include a payment method twice" do
-      payment_method = Spree::PaymentMethod.create!({
+      payment_method = Spree::PaymentMethod::Check.create!({
         name: "Fake",
         active: true,
         available_to_users: true,
@@ -554,7 +569,7 @@ describe Spree::Order, type: :model do
     end
 
     it "does not include inactive payment methods" do
-      Spree::PaymentMethod.create!({
+      Spree::PaymentMethod::Check.create!({
         name: "Fake",
         active: false,
         available_to_users: true,
@@ -785,10 +800,10 @@ describe Spree::Order, type: :model do
     end
   end
 
-  context "#assign_default_user_addresses!" do
+  context "#assign_default_user_addresses" do
     let(:order) { Spree::Order.new }
 
-    subject { order.assign_default_user_addresses! }
+    subject { order.assign_default_user_addresses }
 
     context "when no user is associated to the order" do
       it "does not associate any bill address" do
