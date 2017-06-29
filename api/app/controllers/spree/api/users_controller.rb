@@ -18,7 +18,7 @@ class Spree::Api::UsersController < Spree::Api::ResourceController
     if warden.authenticate scope: :spree_user
       @user = warden.user scope: :spree_user
       @user.generate_spree_api_key! if @user.spree_api_key.blank?
-      render 'auth'
+      render 'show'
     else
       render 'invalid', status: 401
     end
