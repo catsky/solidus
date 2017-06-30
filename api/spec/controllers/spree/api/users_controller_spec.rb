@@ -6,7 +6,7 @@ module Spree
 
     let(:user) { create(:user, spree_api_key: SecureRandom.hex) }
     let(:stranger) { create(:user, email: 'stranger@example.com') }
-    let(:attributes) { [:id, :email, :created_at, :updated_at] }
+    let(:attributes) { [:id, :email, :spree_api_key, :created_at, :updated_at] }
 
     context "as a normal user" do
       it "can get own details" do
@@ -68,7 +68,6 @@ module Spree
           }
         }
         expect(json_response['email']).to eq 'mine@example.com'
-        expect(json_response['bill_address']).to_not be_nil
         expect(json_response['ship_address']).to_not be_nil
       end
 
