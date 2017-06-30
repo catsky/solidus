@@ -9,6 +9,7 @@ Spree::Core::Engine.routes.draw do
   end
 
   namespace :api, defaults: { format: 'json' } do
+    get '/ping', to: 'pings#show'
     resources :promotions, only: [:show]
 
     resources :products do
