@@ -1,6 +1,7 @@
 module Spree
   module Api
     class ProductsController < Spree::Api::BaseController
+      skip_before_action :authenticate_user, only: :index
       def index
         if params[:ids]
           ids = params[:ids].split(",").flatten
